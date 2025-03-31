@@ -1,0 +1,36 @@
+<div class="pc-navbar">
+  <div class="navbar">
+    <a class="active" (click)="home()">
+      <i class="bi bi-house-door-fill"></i>
+      Home
+    </a>
+
+    <a href="#">
+      <i class="bi bi-question-diamond-fill"></i>
+      Help
+    </a>
+
+    <button [matMenuTriggerFor]="menu">
+      <a>
+        Admin
+        <i class="bi bi-caret-down-fill"></i>
+      </a>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="maintanance">
+        <mat-icon>table_chart</mat-icon>
+        <span>Maintanance Table</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>folder</mat-icon>
+        <span>Testing</span>
+      </button>
+    </mat-menu>
+
+    <mat-menu #maintanance="matMenu">
+      <button mat-menu-item (click)="routeToBaseCode()">BaseCode</button>
+      <button mat-menu-item>OptionCode</button>
+    </mat-menu>
+  </div>
+</div>

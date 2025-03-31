@@ -1,0 +1,17 @@
+.pc-sidebar-container {
+  height: 100vh;
+}
+
+.mat-sidenav-container,
+.mat-sidenav-content,
+.mat-sidenav {
+  height: 100%;
+}
+
+.is-active {
+  --mdc-list-list-item-label-text-color: var(--primary-color) !important;
+  --mdc-list-list-item-focus-label-text-color: var(--primary-color) !important;
+  --mdc-list-list-item-focus-state-layer-color: rgb(240, 237, 237) !important;
+  background-color: rgb(240, 237, 237);
+  border-left: 4px solid var(--primary-color) !important;
+}

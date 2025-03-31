@@ -1,0 +1,22 @@
+<div class="pc-snackar">
+  <div class="d-flex justify-content-between">
+    <span class="fs-6 fw-bold">
+      <i
+        class="bi"
+        [ngClass]="{
+          'bi-check-circle-fill': data.type === 'Success',
+          'bi-info-circle-fill': data.type === 'Info',
+          'bi-exclamation-triangle-fill': data.type === 'Error',
+        }"></i>
+      {{ data.type }}
+    </span>
+    <div class="float-right">
+      <a (click)="snackBarRef.dismiss()">
+        <mat-icon>close</mat-icon>
+      </a>
+    </div>
+  </div>
+  <div>
+    <span>{{ data.message }}</span>
+  </div>
+</div>

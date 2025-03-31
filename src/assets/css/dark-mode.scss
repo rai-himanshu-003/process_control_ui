@@ -1,0 +1,92 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+$my-warn: mat.define-palette(mat.$red-palette);
+
+$my-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $my-primary,
+      accent: $my-accent,
+      warn: $my-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+.dark-theme {
+  @include mat.all-component-themes($my-theme);
+
+  header {
+    background-color: black !important;
+  }
+
+  footer {
+    background-color: black !important;
+    color: white !important;
+  }
+
+  .is-active .mdc-list-item__primary-text {
+    color: white !important;
+  }
+
+  .is-active {
+    background-color: rgb(91, 88, 88) !important;
+  }
+
+  .uxf,
+  .pc-inner-container {
+    background-color: #424242 !important;
+  }
+
+  .mat-mdc-row:hover {
+    background-color: grey !important;
+  }
+
+  .mdc-data-table__header-row {
+    background-color: grey !important;
+  }
+
+  .breadcrumb {
+    --bs-breadcrumb-item-active-color: white !important;
+    --bs-breadcrumb-divider-color: white !important;
+  }
+
+  .action .btn {
+    color: white !important;
+  }
+
+  .mat-mdc-table .mdc-data-table__row {
+    height: fit-content !important;
+    max-height: max-content !important;
+  }
+
+  .mdc-data-table__header-row {
+    height: fit-content !important;
+    max-height: max-content !important;
+  }
+
+  input {
+    border: 1px solid rgb(146, 146, 146) !important;
+    background-color: #424242 !important;
+    color: white !important;
+  }
+
+  input::placeholder {
+    color: white !important;
+  }
+
+  .divider-line {
+    color: white !important;
+  }
+
+  .mat-mdc-cell,
+  .mat-mdc-header-cell {
+    border: 1px solid rgb(146, 146, 146) !important;
+  }
+}

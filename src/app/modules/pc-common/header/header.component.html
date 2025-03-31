@@ -1,0 +1,36 @@
+<header class="header">
+  <div class="container-fluid pt-2">
+    <div class="row">
+      <div class="col-10 col-md-10 col-lg-10">
+        <span></span>
+        <a class="menu-icon" (click)="sidebarService.toggleSidebar()">
+          <mat-icon>menu</mat-icon>
+        </a>
+        <img alt="logo" class="pb-2 pl-2" role="presentation" src="../../../../../../../assets/logos/jd-logo.png" />
+        <span class="px-3 h5">|</span>
+        <span class="fs-5 break-text">Process Control Application</span>
+      </div>
+      <div class="col-2 col-md-2 col-lg-2 text-end" style="margin: auto">
+        <span mat-icon-button [matMenuTriggerFor]="menu" aria-label="user profile">
+          <div class="name-icon">{{ initial }}</div>
+        </span>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <div class="name-icon">{{ initial }}</div>
+            <span>{{ user.name }}</span>
+          </button>
+          <hr class="divider-line" />
+          <button mat-menu-item (click)="darkModeService.setDarkMode(!isDarkMode)">
+            <mat-icon>{{ isDarkMode ? 'brightness_7' : 'brightness_6' }}</mat-icon>
+            <span *ngIf="!isDarkMode">Enable Darkmode</span>
+            <span *ngIf="isDarkMode">Disable Darkmode</span>
+          </button>
+          <button mat-menu-item (click)="logOut()">
+            <mat-icon>logout</mat-icon>
+            <span>Sign Out</span>
+          </button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,367 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+:root {
+  --mdc-checkbox-state-layer-size: 1rem;
+  --primary-color: #367c2b;
+  --secondary-color: #eabc08;
+  --bg-color: #ffffff;
+  --bg-secondary-color: #999;
+  --pc-title-size: 16px;
+  --pc-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.pc-text-color {
+  color: var(--primary-color);
+}
+
+a {
+  cursor: pointer;
+}
+
+.form-control {
+  line-height: 0.5 !important;
+}
+
+.btn-right {
+  margin: auto !important;
+  margin-right: .5rem !important;
+}
+
+.pc-inner-container {
+  padding: 0.5rem 0.5rem 0.1rem;
+  //background-color: rgba(255, 255, 255, 0.886) !important;
+  background-color: #ffffff !important;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 2px 10px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.search-form-field {
+  width: 18rem;
+}
+
+.search-form-field .form-control:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0.4rem var(--primary-color) !important;
+}
+
+//button css
+
+.btn {
+  display: inline-flex !important;
+  position: relative !important;
+  --bs-btn-padding-x: 0.5rem !important;
+  --bs-btn-font-size: 0.875rem !important;
+  vertical-align: middle !important;
+  font-weight: 600 !important;
+  box-sizing: border-box !important;
+}
+
+.action .btn:hover {
+  color: var(--primary-color) !important;
+}
+
+.btn-primary {
+  --bs-btn-color: #454545 !important;
+  --bs-btn-hover-color: #454545 !important;
+  --bs-btn-active-color: #454545 !important;
+  --bs-btn-border-color: #ffd621 !important;
+  --bs-btn-bg: rgb(255, 222, 0) !important;
+  --bs-btn-active-bg: rgb(255, 222, 0) !important;
+  --bs-btn-hover-bg: #c9a400 !important;
+  --bs-btn-active-border-color: #ffd621 !important;
+  --bs-btn-focus-shadow-rgb: 0 0 0 !important;
+  --bs-btn-hover-border-color: #ffd621 !important;
+  --bs-btn-disabled-border-color: #ffd621 !important;
+  --bs-btn-disabled-bg: #ffd621 !important;
+  --bs-btn-disabled-color: #454545 !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.2) 0px -1px 1px inset, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px !important;
+}
+
+.btn-secondary {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.2) 0px -1px 1px inset, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px !important;
+}
+
+.break-text {
+  white-space: pre !important;
+}
+
+.divider-line {
+  margin: 0.5rem !important;
+}
+
+.uxf {
+  background-color: #ffffff !important;
+}
+
+//table css
+
+.mat-paginator-sticky {
+  bottom: 0px;
+  position: sticky;
+  z-index: 10;
+}
+
+mat-header-cell,
+mat-cell {
+  justify-content: center;
+  word-break: break-all;
+}
+
+.mdc-data-table__header-row {
+  background-color:  #f2eeee !important;
+  min-height: 2.3rem !important;
+  max-height: max-content !important;
+  word-break: break-all;
+  font-weight: 600;
+  color: black !important;
+}
+
+.mat-mdc-paginator-container {
+  min-height: fit-content !important;
+  max-height: max-content !important;
+  flex-wrap: initial !important;
+  border-top: 1px solid lightgrey !important;
+}
+
+.mat-mdc-paginator-range-actions,
+.mat-mdc-paginator-page-size {
+  height: fit-content !important;
+  max-height: max-content !important;
+}
+
+.mat-mdc-table .mdc-data-table__row {
+  min-height: fit-content !important;
+  max-height: max-content !important;
+}
+
+.uxf img {
+  height: 1rem !important;
+}
+
+.mat-mdc-row:nth-child(2n + 1) {
+  //background-color:#f2eeee;
+}
+
+mat-header-cell h5 {
+  padding-top: 10px !important;
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.mat-sort-header-arrow {
+  color: black !important;
+}
+
+.pc-table {
+  flex: 1;
+  overflow: auto;
+}
+
+.mat-mdc-cell,
+.mat-mdc-header-cell {
+  border: 1px solid #e2e8f0 !important;
+}
+
+.mat-mdc-row:hover {
+  background-color: #f2eeee !important;
+}
+
+a.disabled {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+}
+
+.btn:disabled,
+.btn.disabled,
+fieldset:disabled .btn {
+  border-color: transparent !important;
+}
+
+.center-conatianer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: fit-content;
+}
+
+//font size css  use fs-6 for size 16px and fs-5 for 20px
+
+.fs-6 {
+  font-family: var(--pc-font-family) !important;
+}
+
+.fs-7 {
+  font-size: 14px;
+  font-family: var(--pc-font-family);
+}
+
+.fs-8 {
+  font-size: 12px;
+  font-family: var(--pc-font-family);
+}
+
+.fs-9 {
+  font-size: 10px;
+  font-family: var(--pc-font-family);
+}
+
+.mat-mdc-menu-content,
+.mdc-list-item__primary-text {
+  font-size: 14px !important;
+  font-family: var(--pc-font-family) !important;
+}
+
+.mat-mdc-menu-item {
+  min-height: 35px !important;
+}
+
+.name-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: black;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+// nav bar css
+
+.navbar {
+  width: 100%;
+  overflow: auto;
+  justify-content: start !important;
+}
+
+.navbar a {
+  float: left;
+  padding: 3px;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-size: var(--pc-title-size) !important;
+}
+
+.navbar a:hover {
+  background-color: #000;
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.7; // Optional: make the container look "greyed out"
+}
+
+// snackbar csss
+
+.success-snackbar .mdc-snackbar__surface {
+  border-left: 10px solid var(--primary-color) !important;
+}
+
+.error-snackbar .mdc-snackbar__surface {
+  border-left: 10px solid red !important;
+}
+
+.info-snackbar .mdc-snackbar__surface {
+  border-left: 10px solid var(--secondary-color) !important;
+}
+
+.mdc-snackbar__surface {
+  padding-right: 0 !important;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+  color: black !important;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: white !important;
+  border: 1px solid grey;
+}
+
+.mdc-snackbar__label {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+//mat-dialog css
+
+.mdc-dialog__title {
+  padding: 0 24px 0px !important;
+}
+
+.mdc-dialog .mdc-dialog__content {
+  padding: 10px 24px 10px 24px !important;
+}
+
+.mdc-dialog__actions {
+  padding-top: 0 !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__content,
+.mdc-button,
+.mat-mdc-snack-bar-container .mdc-snackbar__label {
+  font-family: var(--pc-font-family) !important;
+}
+
+//mat expansion css
+
+.mat-expansion-panel-header {
+  padding: 0 16px !important;
+  font-family: var(--pc-font-family) !important;
+  font-size: 14px !important;
+}
+
+.mat-expansion-panel-body {
+  padding: 0 15px 1px !important;
+}
+
+.mat-expansion-panel-header.mat-expanded {
+  height: 50px !important;
+}
+
+.mat-expansion-panel {
+  box-shadow: none !important;
+}
+
+.mdc-list-item--selected .mdc-list-item__primary-text {
+  color: var(--primary-color) !important;
+}
+
+//mat checkbox css
+
+.mat-mdc-checkbox.mat-accent {
+  --mdc-checkbox-selected-pressed-icon-color: var(--primary-color) !important;
+  --mdc-checkbox-selected-icon-color: var(--primary-color) !important;
+  --mdc-checkbox-selected-hover-icon-color: var(--primary-color) !important;
+  --mdc-checkbox-selected-focus-icon-color: var(--primary-color) !important;
+}
+
+.mat-mdc-checkbox.mat-accent .mdc-checkbox--selected~.mdc-checkbox__ripple {
+  background: none !important;
+}
+
+.mat-mdc-checkbox-ripple, .mdc-checkbox__ripple {
+  border-radius: 0 !important;
+  position: relative !important;
+}
+
+.action .btn {
+  font-size: 14px !important;
+}
+

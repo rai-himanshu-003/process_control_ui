@@ -1,0 +1,56 @@
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="dataSource" multiTemplateDataRows matSort matSortDirection="asc">
+    <ng-container *ngFor="let c of columns" [matColumnDef]="c.field">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        <span class="fs-6 text-black">{{ c.header }}</span>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let data">{{ data[c.field] }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="expand" *ngIf="checkIfExpandedColumns()">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <a class="pc-text-color" (click)="row.expanded = !row.expanded">
+          <i [ngClass]="row.expanded ? 'bi bi-chevron-down' : 'bi bi-chevron-right'"></i>
+        </a>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="expandedDetail" *ngIf="checkIfExpandedColumns()">
+      <mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+        <div class="expand-element-detail" [@detailExpand]="element.expanded ? 'expanded' : 'collapsed'">
+          <div class="col-md-12 my-2" *ngFor="let c of expandedColumns">
+            <span class="fs-7 fw-bold">{{ c.header }} :</span>
+            <span class="fs-7 mx-2">{{ element[c.field] }}</span>
+          </div>
+        </div>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Actions">
+      <mat-header-cell *matHeaderCellDef>
+        <span class="fs-6 text-black">Actions</span>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row" class="action">
+        <ng-container>
+          <a (click)="onEdit(row)"><i class="btn bi bi-pencil-square"></i></a>
+          <a (click)="onDelete(row)"><i class="btn bi bi-trash3 px-3"></i></a>
+        </ng-container>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns" [class.example-expanded-row]="row.expanded"></mat-row>
+
+    <ng-container *ngIf="checkIfExpandedColumns()">
+      <mat-row *matRowDef="let row; columns: ['expandedDetail']"></mat-row>
+    </ng-container>
+  </mat-table>
+
+  <mat-paginator
+    class="mat-paginator-sticky"
+    #paginator
+    [pageSizeOptions]="[20, 50, 100, 500, 1000, 5000, 10000]"
+    [pageSize]="20"
+    showFirstLastButtons></mat-paginator>
+</div>

@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li
+            class="breadcrumb-item fs-6"
+            *ngFor="let breadcrumb of breadcrumbs$ | async; let last = last"
+            [ngClass]="{active: last}">
+            <ng-container *ngIf="!last">
+              <a class="pc-text-color" [routerLink]="breadcrumb.url">
+                <ng-container *ngIf="breadcrumb.label === 'Home'; else label">
+                  <i class="bi bi-house-door-fill"></i>
+                </ng-container>
+                <ng-template #label>{{ breadcrumb.label }}</ng-template>
+              </a>
+            </ng-container>
+            <ng-container *ngIf="last">
+              {{ breadcrumb.label }}
+            </ng-container>
+          </li>
+        </ol>
+      </nav>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+      <form class="search-form-field" role="search">
+        <div class="input-group">
+          <input
+            class="form-control"
+            (keyup)="applyFilter()"
+            name="searchKey"
+            [(ngModel)]="searchKey"
+            placeholder="Search" />
+          <button *ngIf="searchKey" class="btn btn-primary btn-outline" type="button" (click)="clearSearch()">
+            <i class="bi bi-x-circle"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

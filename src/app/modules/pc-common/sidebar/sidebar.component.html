@@ -1,0 +1,40 @@
+<mat-sidenav-container class="pc-sidebar-container" autosize>
+  <mat-sidenav #sidenav [mode]="isSmallScreen ? 'over' : 'side'" [opened]="sidebarService.sidebarState$ | async">
+    <mat-nav-list>
+      <mat-list-item routerLink="/dashboard/home" [routerLinkActive]="['is-active']">
+        <i class="bi bi-house-door-fill"></i>
+        <span class="px-2">Home</span>
+      </mat-list-item>
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <i class="bi bi-file-lock"></i>
+              <span class="px-2">Admin</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list-item routerLink="/dashboard/admin/base-code" [routerLinkActive]="['is-active']">
+            <i class="bi bi-table"></i>
+            <span class="px-2">Base Code</span>
+          </mat-list-item>
+          <mat-list-item routerLink="/dashboard/admin/queue-status" [routerLinkActive]="['is-active']">
+            <i class="bi bi-table"></i>
+            <span class="px-2">Process Queue Status</span>
+          </mat-list-item>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <mat-list-item routerLink="/dashboard/blocked-user" [routerLinkActive]="['is-active']">
+        <i class="bi bi-ban"></i>
+        <span class="px-2">Blocked User</span>
+      </mat-list-item>
+      <mat-list-item>
+        <i class="bi bi-question-diamond-fill"></i>
+        <span class="px-2">Help</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-loader></app-loader>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

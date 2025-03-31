@@ -1,0 +1,36 @@
+<div class="pc-inner-container">
+  <app-breadcrumb [searchKey]="searchKey" (search)="applyFilter($event)" (clear)="clearSearch()"></app-breadcrumb>
+
+  <hr class="divider-line" />
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary" (click)="add()">
+          <i class="bi bi-plus-circle"></i>
+          ADD
+        </button>
+
+        <button class="btn btn-primary" style="float: right">
+          <i class="bi bi-file-earmark-spreadsheet"></i>
+          Export All
+        </button>
+
+        <button class="btn btn-primary mx-2" style="float: right">
+          <i class="bi bi-file-arrow-up"></i>
+          Import
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider-line" />
+
+  <div class="pc-table">
+    <app-pc-table
+      [dataSource]="dataSource"
+      [columns]="column"
+      (edit)="edit($event)"
+      (delete)="delete($event)"></app-pc-table>
+  </div>
+</div>
