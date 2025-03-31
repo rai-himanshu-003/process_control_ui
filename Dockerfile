@@ -8,16 +8,8 @@ COPY package*.json ./
 RUN npm ci && npm install -g @angular/cli@15.0.0
 # Copy all files
 COPY . .
-# Build the application
-RUN npm run build --configuration-prod
-# Step 2: We use the nginx image to serve the application
-FROM nginx:alpine
-# Copy the build output to replace the default nginx contents.
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-# Copy the build output to replace the default nginx contents.
-COPY --from=build /app/dist/process-ctrl-ui /usr/share/nginx/html
 # Expose port 4200
-EXPOSE 4200
-CMD [ "nginx", "-g", "daemon off;" ]
+EXPOSE 80
+CMD [ "npm", "start" ]
 # Build: docker build -t process-ctrl-ui-nodejs .
 # Run: docker run -d -p 4200:4200 process-ctrl-ui-nodejs
